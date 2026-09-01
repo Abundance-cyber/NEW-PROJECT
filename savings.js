@@ -738,24 +738,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             });
 
-
         saveGoals(updatedGoals);
 
-
         renderGoals();
-
 
         alert(
             "Goal deleted successfully!"
         );
-
     }
-
 
     // =====================================================
     // LOAD SAVED DATA
     // =====================================================
 
     renderGoals();
-
 });

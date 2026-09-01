@@ -2,33 +2,24 @@
    NAIRAPULSE SIGNUP
 ========================================= */
 
-
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-
         const signupForm =
             document.getElementById("signupForm");
-
 
         const message =
             document.getElementById("signupMessage");
 
-
         if (!signupForm) {
-
             return;
-
         }
-
 
         signupForm.addEventListener(
             "submit",
             function (event) {
-
                 event.preventDefault();
-
 
                 /* =========================
                    GET FORM VALUES
@@ -40,47 +31,38 @@ document.addEventListener(
                         .value
                         .trim();
 
-
                 const email =
                     document
                         .getElementById("signupEmail")
                         .value
                         .trim();
 
-
                 const password =
                     document
                         .getElementById("signupPassword")
                         .value;
-
 
                 const confirmPassword =
                     document
                         .getElementById("confirmPassword")
                         .value;
 
-
                 const terms =
                     document
                         .getElementById("terms")
                         .checked;
-
 
                 /* =========================
                    VALIDATION
                 ========================= */
 
                 if (!name || !email || !password) {
-
                     showMessage(
                         "Please fill in all required fields.",
                         "error"
                     );
-
                     return;
-
                 }
-
 
                 if (password !== confirmPassword) {
 
@@ -88,46 +70,32 @@ document.addEventListener(
                         "Passwords do not match.",
                         "error"
                     );
-
                     return;
-
                 }
 
-
                 if (!terms) {
-
                     showMessage(
                         "Please agree to the terms and conditions.",
                         "error"
                     );
-
                     return;
-
                 }
-
 
                 /* =========================
                    GET EXISTING USERS
                 ========================= */
-
                 let users = [];
 
-
                 try {
-
                     users =
                         JSON.parse(
                             localStorage.getItem(
                                 "nairapulseUsers"
                             )
                         ) || [];
-
                 } catch (error) {
-
                     users = [];
-
                 }
-
 
                 /* =========================
                    CHECK EXISTING EMAIL
@@ -136,47 +104,33 @@ document.addEventListener(
                 const existingUser =
                     users.find(
                         function (user) {
-
                             return (
                                 user.email.toLowerCase() ===
                                 email.toLowerCase()
                             );
-
                         }
                     );
 
-
                 if (existingUser) {
-
                     showMessage(
                         "An account with this email already exists.",
                         "error"
                     );
-
                     return;
-
                 }
-
 
                 /* =========================
                    CREATE USER
                 ========================= */
 
                 const newUser = {
-
                     id: Date.now(),
-
                     name: name,
-
                     email: email,
-
                     password: password
-
                 };
 
-
                 users.push(newUser);
-
 
                 /* =========================
                    SAVE USER
@@ -186,7 +140,6 @@ document.addEventListener(
                     "nairapulseUsers",
                     JSON.stringify(users)
                 );
-
 
                 /* =========================
                    SAVE CURRENT USER
@@ -201,7 +154,6 @@ document.addEventListener(
                     })
                 );
 
-
                 /* =========================
                    LOGIN STATUS
                 ========================= */
@@ -210,7 +162,6 @@ document.addEventListener(
                     "nairapulseLoggedIn",
                     "true"
                 );
-
 
                 /* =========================
                    SUCCESS MESSAGE
@@ -221,24 +172,19 @@ document.addEventListener(
                     "success"
                 );
 
-
                 /* =========================
                    GO TO DASHBOARD
                 ========================= */
 
                 setTimeout(
                     function () {
-
                         window.location.href =
                             "dashboard.html";
-
                     },
                     800
                 );
-
             }
         );
-
 
         /* =================================
            MESSAGE FUNCTION
@@ -248,24 +194,16 @@ document.addEventListener(
             text,
             type
         ) {
-
             message.textContent =
                 text;
 
-
             if (type === "success") {
-
                 message.style.color =
                     "#00d864";
-
             } else {
-
                 message.style.color =
                     "#ff5265";
-
             }
-
         }
-
     }
 );

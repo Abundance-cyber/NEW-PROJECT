@@ -1,18 +1,5 @@
 /* =========================================================
    NAIRAPULSE - BUDGET PAGE
-   =========================================================
-   Budget features:
-   - Create Budget
-   - Update Budget
-   - Update Spent
-   - Automatic Remaining calculation
-   - Automatic Progress calculation
-   - Delete Budget
-   - Permanent localStorage saving
-
-   IMPORTANT:
-   Spent is entered manually by the user.
-   It is NOT taken from Transactions.
    ========================================================= */
 
 
@@ -589,7 +576,6 @@ document.addEventListener(
 
                     }
 
-
                     /*
                        Use the new app.js
                        budget storage function.
@@ -613,54 +599,38 @@ document.addEventListener(
                         */
 
                         budgets.push({
-
                             id: Date.now(),
-
                             category:
                                 category,
-
                             amount:
                                 amount,
-
                             spent: 0,
-
                             period:
                                 period
-
                         });
-
 
                         saveBudgets(
                             budgets
                         );
-
                     }
 
-
                     form.reset();
-
 
                     if (modal) {
 
                         modal.classList.remove(
                             "show"
                         );
-
                     }
 
-
                     renderBudgets();
-
 
                     alert(
                         `${category} budget created successfully!`
                     );
-
                 }
             );
-
         }
-
 
         /* =====================================================
            ACTION BUTTON
@@ -675,11 +645,9 @@ document.addEventListener(
                     ".more-btn"
                 );
 
-
             if (!button) {
                 return;
             }
-
 
             button.addEventListener(
                 "click",
@@ -690,50 +658,35 @@ document.addEventListener(
                             row.dataset.id
                         );
 
-
                     const budgets =
                         getBudgets();
-
 
                     const budget =
                         budgets.find(
                             function (item) {
-
                                 return (
                                     Number(item.id) ===
                                     id
                                 );
-
                             }
                         );
-
 
                     if (!budget) {
 
                         alert(
                             "Budget could not be found."
                         );
-
                         return;
-
                     }
-
 
                     const choice =
                         prompt(
-
                             `Budget options for ${budget.category}\n\n` +
-
                             `1. Update Budget\n` +
-
                             `2. Update Spent\n` +
-
                             `3. Delete Budget\n\n` +
-
                             `Enter 1, 2 or 3:`
-
                         );
-
 
                     /* =========================================
                        UPDATE BUDGET
@@ -743,37 +696,26 @@ document.addEventListener(
 
                         const newAmount =
                             prompt(
-
                                 `Enter new budget amount for ${budget.category}:`,
-
                                 budget.amount
-
                             );
-
 
                         if (
                             newAmount === null
                         ) {
-
                             return;
-
                         }
-
 
                         if (
                             newAmount.trim() === ""
                         ) {
-
                             return;
-
                         }
-
 
                         const amount =
                             Number(
                                 newAmount
                             );
-
 
                         if (
                             isNaN(amount) ||
@@ -783,9 +725,7 @@ document.addEventListener(
                             alert(
                                 "Please enter a valid budget amount."
                             );
-
                             return;
-
                         }
 
 
@@ -801,53 +741,38 @@ document.addEventListener(
                                 budget.spent || 0
                             )
                         ) {
-
                             alert(
-
                                 `Your current spent amount is ${formatMoney(
                                     budget.spent
                                 )}.\n\n` +
-
                                 `The new budget cannot be less than the amount already spent.`
-
                             );
-
                             return;
-
                         }
-
 
                         if (
                             typeof updateNairaPulseBudget ===
                             "function"
                         ) {
-
                             updateNairaPulseBudget(
                                 id,
                                 amount
                             );
 
                         } else {
-
                             budget.amount =
                                 amount;
-
                             saveBudgets(
                                 budgets
                             );
-
                         }
 
-
                         renderBudgets();
-
 
                         alert(
                             `${budget.category} budget updated successfully!`
                         );
-
                     }
-
 
                     /* =========================================
                        UPDATE SPENT
@@ -859,61 +784,43 @@ document.addEventListener(
 
                         const newSpent =
                             prompt(
-
                                 `How much have you spent from your ${budget.category} budget?\n\n` +
-
                                 `Budget: ${formatMoney(
                                     budget.amount
                                 )}\n` +
-
                                 `Current spent: ${formatMoney(
                                     budget.spent
                                 )}\n\n` +
-
                                 `Enter total amount spent:`,
-
                                 budget.spent || 0
-
                             );
-
 
                         if (
                             newSpent === null
                         ) {
-
                             return;
-
                         }
-
 
                         if (
                             newSpent.trim() === ""
                         ) {
-
                             return;
-
                         }
-
 
                         const spent =
                             Number(
                                 newSpent
                             );
 
-
                         if (
                             isNaN(spent) ||
                             spent < 0
                         ) {
-
                             alert(
                                 "Please enter a valid spent amount."
                             );
-
                             return;
-
                         }
-
 
                         if (
                             spent >
@@ -921,37 +828,23 @@ document.addEventListener(
                                 budget.amount
                             )
                         ) {
-
                             const continueAnyway =
                                 confirm(
-
                                     `You entered ${formatMoney(
                                         spent
                                     )}, but your budget is only ${formatMoney(
                                         budget.amount
                                     )}.\n\n` +
-
                                     `This will put the budget over its limit.\n\n` +
-
                                     `Do you want to continue?`
-
                                 );
-
 
                             if (
                                 !continueAnyway
                             ) {
-
                                 return;
-
                             }
-
                         }
-
-
-                        /*
-                           SAVE SPENT AMOUNT
-                        */
 
                         if (
                             typeof updateNairaPulseBudgetSpent ===
@@ -971,16 +864,7 @@ document.addEventListener(
                             saveBudgets(
                                 budgets
                             );
-
                         }
-
-
-                        /*
-                           Re-render everything.
-                           Remaining and progress are
-                           calculated automatically.
-                        */
-
                         renderBudgets();
 
 
@@ -990,13 +874,11 @@ document.addEventListener(
                                 spent
                             );
 
-
                         const progress =
                             calculateProgress(
                                 budget.amount,
                                 spent
                             );
-
 
                         alert(
 
@@ -1057,12 +939,10 @@ document.addEventListener(
                                         );
                                     }
                                 );
-
                             saveBudgets(
                                 updatedBudgets
                             );
                         }
-
                         renderBudgets();
 
                         alert(
@@ -1078,12 +958,9 @@ document.addEventListener(
            ===================================================== */
 
         function updateBudgetSummary() {
-
             const budgets =
                 getBudgets();
-
             let totalBudget = 0;
-
             let totalSpent = 0;
 
             budgets.forEach(
