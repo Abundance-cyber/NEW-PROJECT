@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nairapulse - Reports</title>
+
+    <link rel="stylesheet" href="reports.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- ================= HEADER ================= -->
+        <header class="brand">
+            <div class="brand-logo">
+                <svg viewBox="0 0 64 64">
+                    <path d="M10 20L32 8L54 20L32 32L10 20Z" stroke="#00e676" stroke-width="3.5" fill="none"
+                        stroke-linejoin="round" />
+
+                    <path d="M10 30L32 42L54 30" stroke="#00e676" stroke-width="3.5" fill="none"
+                        stroke-linejoin="round" />
+
+                    <path d="M10 40L32 52L54 40" stroke="#00e676" stroke-width="3.5" fill="none"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+
+            <h1>Nairapulse</h1>
+        </header>
+
+
+        <!-- ================= MAIN LAYOUT ================= -->
+        <div class="main-layout">
+
+            <!-- ================= SIDEBAR ================= -->
+            <aside class="sidebar">
+
+                <div class="welcome">
+                    <div class="user-icon">👤</div>
+                    <h3>Welcome!</h3>
+                </div>
+
+                <nav class="menu">
+
+                    <a href="dashboard.html" class="menu-item">
+                        <span class="menu-icon">⌂</span>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="transaction.html" class="menu-item">
+                        <span class="menu-icon">↔</span>
+                        <span>Transactions</span>
+                    </a>
+
+                    <a href="budget.html" class="menu-item">
+                        <span class="menu-icon">▣</span>
+                        <span>Budgets</span>
+                    </a>
+
+                    <!-- REPORTS ACTIVE -->
+                    <a href="reports.html" class="menu-item active">
+                        <span class="menu-icon">▥</span>
+                        <span>Reports</span>
+                    </a>
+
+                    <a href="savings.html" class="menu-item">
+                        <span class="menu-icon">◎</span>
+                        <span>Savings Goals</span>
+                    </a>
+
+                    <a href="export.html" class="menu-item">
+                        <span class="menu-icon">⇩</span>
+                        <span>Export Data</span>
+                    </a>
+
+                </nav>
+
+            </aside>
+
+
+            <!-- ================= REPORT CONTENT ================= -->
+            <main class="content">
+
+                <!-- TOP TITLE -->
+                <div class="page-heading">
+
+                    <div>
+                        <h2>Reports</h2>
+                        <p>Insights into your income and spending</p>
+                    </div>
+
+                    <div class="heading-actions">
+
+                        <select id="reportMonth" class="month-btn">
+                            <option value="all">All Months</option>
+                            <option value="0">January</option>
+                            <option value="1">February</option>
+                            <option value="2">March</option>
+                            <option value="3">April</option>
+                            <option value="4">May</option>
+                            <option value="5">June</option>
+                            <option value="6">July</option>
+                            <option value="7">August</option>
+                            <option value="8">September</option>
+                            <option value="9">October</option>
+                            <option value="10">November</option>
+                            <option value="11">December</option>
+                        </select>
+
+                        <button class="export-btn" id="exportReport">
+                            ⇩
+                            Export Report
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= SUMMARY CARDS ================= -->
+                <section class="summary-grid">
+
+                    <!-- TOTAL INCOME -->
+                    <div class="summary-card">
+
+                        <div class="summary-icon income-icon">
+                            ↗
+                        </div>
+
+                        <div class="summary-info">
+                            <h4>TOTAL INCOME</h4>
+                            <strong class="blue">₦12,000.00</strong>
+                            <p>
+                                <span class="positive">↗ 20.0%</span>
+                                vs last month
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOTAL EXPENSES -->
+                    <div class="summary-card">
+
+                        <div class="summary-icon expense-icon">
+                            ↘
+                        </div>
+
+                        <div class="summary-info">
+                            <h4>TOTAL EXPENSES</h4>
+                            <strong class="red">₦4,850.00</strong>
+                            <p>
+                                <span class="positive">↗ 10.5%</span>
+                                vs last month
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- NET SAVINGS -->
+                    <div class="summary-card">
+
+                        <div class="summary-icon savings-icon">
+                            ▣
+                        </div>
+
+                        <div class="summary-info">
+                            <h4>NET SAVINGS</h4>
+                            <strong class="green">₦7,150.00</strong>
+                            <p>
+                                <span class="positive">↗ 28.4%</span>
+                                vs last month
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- SAVINGS RATE -->
+                    <div class="summary-card">
+
+                        <div class="summary-icon rate-icon">
+                            %
+                        </div>
+
+                        <div class="summary-info">
+                            <h4>SAVINGS RATE</h4>
+                            <strong class="purple">59.6%</strong>
+                            <p>
+                                <span class="positive">↗ 6.2%</span>
+                                vs last month
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= FIRST CHART ROW ================= -->
+                <section class="chart-row">
+
+                    <!-- INCOME VS EXPENSES -->
+                    <div class="panel income-panel">
+
+                        <div class="panel-header">
+                            <h3>Income vs Expenses</h3>
+
+                            <div class="legend">
+                                <span>
+                                    <i class="legend-blue"></i>
+                                    Income
+                                </span>
+
+                                <span>
+                                    <i class="legend-red"></i>
+                                    Expenses
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="bar-chart">
+
+                            <div class="y-axis">
+                                <span>₦15K</span>
+                                <span>₦10K</span>
+                                <span>₦5K</span>
+                                <span>₦0</span>
+                            </div>
+
+                            <div class="chart-area">
+
+                                <div class="grid-lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <div class="bars">
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 48%;"></div>
+                                        <div class="bar expense-bar" style="height: 22%;"></div>
+                                        <label>Jan</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 63%;"></div>
+                                        <div class="bar expense-bar" style="height: 26%;"></div>
+                                        <label>Feb</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 73%;"></div>
+                                        <div class="bar expense-bar" style="height: 29%;"></div>
+                                        <label>Mar</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 70%;"></div>
+                                        <div class="bar expense-bar" style="height: 27%;"></div>
+                                        <label>Apr</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 87%;"></div>
+                                        <div class="bar expense-bar" style="height: 36%;"></div>
+                                        <label>May</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 79%;"></div>
+                                        <div class="bar expense-bar" style="height: 29%;"></div>
+                                        <label>Jun</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 79%;"></div>
+                                        <div class="bar expense-bar" style="height: 29%;"></div>
+                                        <label>July</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 79%;"></div>
+                                        <div class="bar expense-bar" style="height: 29%;"></div>
+                                        <label>Aug</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 79%;"></div>
+                                        <div class="bar expense-bar" style="height: 29%;"></div>
+                                        <label>Sept</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 79%;"></div>
+                                        <div class="bar expense-bar" style="height: 29%;"></div>
+                                        <label>Oct</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 79%;"></div>
+                                        <div class="bar expense-bar" style="height: 29%;"></div>
+                                        <label>Nov</label>
+                                    </div>
+
+                                    <div class="bar-group">
+                                        <div class="bar income-bar" style="height: 79%;"></div>
+                                        <div class="bar expense-bar" style="height: 29%;"></div>
+                                        <label>Dec</label>
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SPENDING BY CATEGORY -->
+                    <div class="panel category-panel">
+
+                        <div class="panel-header">
+                            <h3>Spending by Category</h3>
+                        </div>
+
+                        <div class="category-content">
+
+                            <div class="donut-container">
+
+                                <div class="donut">
+                                    <div class="donut-center">
+                                        <strong>₦4,850.00</strong>
+                                        <span>Total Expenses</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="category-list">
+
+                                <div class="category-row">
+                                    <span>
+                                        <i class="dot food"></i>
+                                        Food
+                                    </span>
+                                    <strong>₦1,250.00</strong>
+                                    <small>25.8%</small>
+                                </div>
+
+                                <div class="category-row">
+                                    <span>
+                                        <i class="dot rent"></i>
+                                        Rent
+                                    </span>
+                                    <strong>₦1,800.00</strong>
+                                    <small>37.1%</small>
+                                </div>
+
+                                <div class="category-row">
+                                    <span>
+                                        <i class="dot transport"></i>
+                                        Transportation
+                                    </span>
+                                    <strong>₦850.00</strong>
+                                    <small>17.5%</small>
+                                </div>
+
+                                <div class="category-row">
+                                    <span>
+                                        <i class="dot utilities"></i>
+                                        Utilities
+                                    </span>
+                                    <strong>₦450.00</strong>
+                                    <small>9.3%</small>
+                                </div>
+
+                                <div class="category-row">
+                                    <span>
+                                        <i class="dot shopping"></i>
+                                        Shopping
+                                    </span>
+                                    <strong>₦300.00</strong>
+                                    <small>6.2%</small>
+                                </div>
+
+                                <div class="category-row">
+                                    <span>
+                                        <i class="dot entertainment"></i>
+                                        Entertainment
+                                    </span>
+                                    <strong>₦200.00</strong>
+                                    <small>4.1%</small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <button class="breakdown-btn">
+                            View full breakdown →
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= SECOND CHART ROW ================= -->
+                <section class="chart-row bottom-row">
+
+                    <!-- MONTHLY SPENDING TREND -->
+                    <div class="panel trend-panel">
+
+                        <div class="panel-header">
+                            <h3>Monthly Spending Trend</h3>
+                        </div>
+
+                        <div class="trend-chart">
+
+                            <div class="trend-y-axis">
+                                <span>₦6K</span>
+                                <span>₦4K</span>
+                                <span>₦2K</span>
+                                <span>₦0</span>
+                            </div>
+
+                            <div class="trend-area">
+
+                                <div class="trend-lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <svg class="trend-svg" viewBox="0 0 600 230" preserveAspectRatio="none">
+
+                                    <polygon points="30,145 135,110 240,90 345,100 450,40 555,65 555,210 30,210"
+                                        fill="rgba(239, 48, 67, 0.18)" />
+
+                                    <polyline points="30,145 135,110 240,90 345,100 450,40 555,65" fill="none"
+                                        stroke="#ff3048" stroke-width="3" />
+
+                                    <circle cx="30" cy="145" r="5" />
+                                    <circle cx="135" cy="110" r="5" />
+                                    <circle cx="240" cy="90" r="5" />
+                                    <circle cx="345" cy="100" r="5" />
+                                    <circle cx="450" cy="40" r="5" />
+                                    <circle cx="555" cy="65" r="5" />
+
+                                </svg>
+
+                                <div class="trend-values">
+                                    <span>₦3,200</span>
+                                    <span>₦3,850</span>
+                                    <span>₦4,200</span>
+                                    <span>₦4,100</span>
+                                    <span>₦5,300</span>
+                                    <span>₦4,850</span>
+                                </div>
+
+                                <div class="trend-months">
+                                    <span>Jan</span>
+                                    <span>Feb</span>
+                                    <span>Mar</span>
+                                    <span>Apr</span>
+                                    <span>May</span>
+                                    <span>Jun</span>
+                                    <span>July</span>
+                                    <span>Aug</span>
+                                    <span>Sept</span>
+                                    <span>Oct</span>
+                                    <span>Nov</span>
+                                    <span>Dec</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOP SPENDING CATEGORIES -->
+                    <div class="panel top-spending-panel">
+
+                        <div class="panel-header top-header">
+
+                            <h3>Top Spending Categories</h3>
+
+                            <div class="table-head">
+                                <span>Amount</span>
+                                <span>% of Total</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="spending-list">
+
+                            <!-- RENT -->
+                            <div class="spending-item">
+
+                                <div class="spending-name">
+                                    <i class="circle-icon rent-bg">⌂</i>
+                                    <span>Rent</span>
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width: 82%; background:#087ff5;"></span>
+                                </div>
+
+                                <strong>₦1,800.00</strong>
+
+                                <small>37.1%</small>
+
+                            </div>
+
+
+                            <!-- FOOD -->
+                            <div class="spending-item">
+
+                                <div class="spending-name">
+                                    <i class="circle-icon food-bg">♜</i>
+                                    <span>Food</span>
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width: 58%; background:#ef3048;"></span>
+                                </div>
+
+                                <strong>₦1,250.00</strong>
+
+                                <small>25.8%</small>
+
+                            </div>
+
+
+                            <!-- TRANSPORT -->
+                            <div class="spending-item">
+
+                                <div class="spending-name">
+                                    <i class="circle-icon transport-bg">▰</i>
+                                    <span>Transportation</span>
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width: 39%; background:#ffb900;"></span>
+                                </div>
+
+                                <strong>₦850.00</strong>
+
+                                <small>17.5%</small>
+
+                            </div>
+
+
+                            <!-- UTILITIES -->
+                            <div class="spending-item">
+
+                                <div class="spending-name">
+                                    <i class="circle-icon utilities-bg">ϟ</i>
+                                    <span>Utilities</span>
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width: 25%; background:#14b8b8;"></span>
+                                </div>
+
+                                <strong>₦450.00</strong>
+
+                                <small>9.3%</small>
+
+                            </div>
+
+
+                            <!-- SHOPPING -->
+                            <div class="spending-item">
+
+                                <div class="spending-name">
+                                    <i class="circle-icon shopping-bg">▣</i>
+                                    <span>Shopping</span>
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width: 20%; background:#7040df;"></span>
+                                </div>
+
+                                <strong>₦300.00</strong>
+
+                                <small>6.2%</small>
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="all-categories">
+                            View all categories →
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= SAVINGS MESSAGE ================= -->
+                <section class="saving-message">
+
+                    <div class="saving-icon">
+                        i
+                    </div>
+
+                    <div>
+                        <p>
+                            You saved
+                            <strong>₦7,150.00</strong>
+                            this month.
+                        </p>
+
+                        <span>
+                            Great job! You're on track to reach your savings goals.
+                        </span>
+                    </div>
+
+                    <button id="savingGoals">
+                        View Savings Goals
+                    </button>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script src="reports.js"></script>
+</body>
+
+</html>

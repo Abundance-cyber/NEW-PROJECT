@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nairapulse - Transactions</title>
+    <link rel="stylesheet" href="transaction.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ======================================
+             HEADER
+        ======================================= -->
+
+        <header class="brand">
+
+            <!-- Nairapulse Logo -->
+            <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 20L32 8L54 20L32 32L10 20Z" stroke="#00e676" stroke-width="3.5" fill="none"
+                    stroke-linejoin="round" />
+                <path d="M10 30L32 42L54 30" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+                <path d="M10 40L32 52L54 40" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+            </svg>
+
+            <h1>Nairapulse</h1>
+        </header>
+
+        <!-- ======================================
+             MAIN LAYOUT
+        ======================================= -->
+
+        <div class="main-layout">
+
+            <!-- ======================================
+                 SIDEBAR
+            ======================================= -->
+
+            <aside class="sidebar">
+                <div class="welcome">
+                    <div class="user-icon">
+                        👤
+                    </div>
+                    <h3>Welcome!</h3>
+                </div>
+
+                <nav class="menu">
+                    <a href="dashboard.html" class="menu-item">
+                        <span class="menu-icon">⌂</span>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="transaction.html" class="menu-item active">
+                        <span class="menu-icon">↔</span>
+                        <span>Transactions</span>
+                    </a>
+
+                    <a href="budget.html" class="menu-item">
+                        <span class="menu-icon">▣</span>
+                        <span>Budgets</span>
+                    </a>
+
+                    <a href="reports.html" class="menu-item">
+                        <span class="menu-icon">▥</span>
+                        <span>Reports</span>
+                    </a>
+
+                    <a href="savings.html" class="menu-item">
+                        <span class="menu-icon">◎</span>
+                        <span>Savings Goals</span>
+                    </a>
+
+                    <a href="export.html" class="menu-item">
+                        <span class="menu-icon">⇩</span>
+                        <span>Export Data</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- ======================================
+                 CONTENT
+            ======================================= -->
+
+            <main class="content">
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+                    <div>
+                        <h2>Transactions</h2>
+                        <p>
+                            Manage your income and expenses
+                        </p>
+                    </div>
+                    <button class="add-btn" id="openModal">
+                        <span>+</span>
+                        Add Transaction
+                    </button>
+                </div>
+
+                <!-- ======================================
+                     SUMMARY CARDS
+                ======================================= -->
+
+                <section class="summary">
+                    <div class="summary-card">
+                        <div class="summary-icon income-icon">
+                            ↗
+                        </div>
+
+                        <div>
+                            <p>Total Income</p>
+                            <h3 id="totalIncome">
+                                ₦12,000.00
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon expense-icon">
+                            ↘
+                        </div>
+
+                        <div>
+                            <p>Total Expenses</p>
+                            <h3 id="totalExpenses">
+                                ₦850.00
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon balance-icon">
+                            ₦
+                        </div>
+                        <div>
+                            <p>Current Balance</p>
+                            <h3 id="currentBalance">
+                                ₦11,150.00
+                            </h3>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ======================================
+                     TRANSACTION PANEL
+                ======================================= -->
+
+                <section class="transaction-panel">
+
+                    <!-- PANEL HEADER -->
+
+                    <div class="panel-header">
+                        <div>
+                            <h3>Recent Transactions</h3>
+                            <p>
+                                View and manage your financial activities
+                            </p>
+                        </div>
+
+                        <div class="transaction-count">
+                            <span id="transactionCount">
+                                6
+                            </span>
+                            Transactions
+                        </div>
+                    </div>
+
+                    <!-- ======================================
+                         SEARCH AND FILTER
+                    ======================================= -->
+
+                    <div class="filters">
+                        <div class="search-box">
+                            <span>⌕</span>
+                            <input type="text" id="searchInput" placeholder="Search transactions...">
+                        </div>
+
+                        <select id="typeFilter">
+                            <option value="all">
+                                All Types
+                            </option>
+
+                            <option value="income">
+                                Income
+                            </option>
+
+                            <option value="expense">
+                                Expense
+                            </option>
+                        </select>
+
+                        <select id="categoryFilter">
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="Food">
+                                Food
+                            </option>
+
+                            <option value="Rent">
+                                Rent
+                            </option>
+
+                            <option value="Utilities">
+                                Utilities
+                            </option>
+
+                            <option value="Transportation">
+                                Transportation
+                            </option>
+
+                            <option value="Shopping">
+                                Shopping
+                            </option>
+
+                            <option value="Salary">
+                                Entertainment
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- ======================================
+                         TRANSACTION TABLE
+                    ======================================= -->
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="transactionTable">
+                                <tr data-type="expense" data-category="Food">
+                                    <td>
+                                        Aug 12, 2026
+                                    </td>
+
+                                    <td>
+                                        <div class="description">
+                                            <div class="transaction-avatar food">
+                                                F
+                                            </div>
+
+                                            <div>
+                                                <strong>
+                                                    Lunch
+                                                </strong>
+                                                <small>
+                                                    Daily expense
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <span class="category food-category">
+                                            Food
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <span class="type expense-type">
+                                            Expense
+                                        </span>
+                                    </td>
+
+                                    <td class="amount-cell expense-amount">
+                                        -₦5,000.00
+                                    </td>
+
+                                    <td>
+                                        <span class="status completed">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="delete-btn" title="Delete">
+                                            ×
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr data-type="income" data-category="Salary">
+                                    <td>
+                                        Aug 10, 2026
+                                    </td>
+                                    <td>
+                                        <div class="description">
+                                            <div class="transaction-avatar salary">
+                                                S
+                                            </div>
+                                            <div>
+                                                <strong>
+                                                    Monthly Salary
+                                                </strong>
+
+                                                <small>
+                                                    August income
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <span class="category salary-category">
+                                            Salary
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <span class="type income-type">
+                                            Income
+                                        </span>
+                                    </td>
+
+                                    <td class="amount-cell income-amount">
+                                        +₦12,000.00
+                                    </td>
+
+                                    <td>
+                                        <span class="status completed">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="delete-btn">
+                                            ×
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr data-type="expense" data-category="Transportation">
+                                    <td>
+                                        Aug 08, 2026
+                                    </td>
+
+                                    <td>
+                                        <div class="description">
+                                            <div class="transaction-avatar transport">
+                                                T
+                                            </div>
+                                            <div>
+                                                <strong>
+                                                    Transportation
+                                                </strong>
+
+                                                <small>
+                                                    Bus fare
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <span class="category transport-category">
+                                            Transportation
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <span class="type expense-type">
+                                            Expense
+                                        </span>
+                                    </td>
+
+                                    <td class="amount-cell expense-amount">
+                                        -₦250.00
+                                    </td>
+
+                                    <td>
+                                        <span class="status completed">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="delete-btn">
+                                            ×
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr data-type="expense" data-category="Utilities">
+                                    <td>
+                                        Aug 05, 2026
+                                    </td>
+
+                                    <td>
+                                        <div class="description">
+                                            <div class="transaction-avatar utilities">
+                                                U
+                                            </div>
+
+                                            <div>
+                                                <strong>
+                                                    Electricity
+                                                </strong>
+
+                                                <small>
+                                                    Utility bill
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <span class="category utilities-category">
+                                            Utilities
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <span class="type expense-type">
+                                            Expense
+                                        </span>
+                                    </td>
+
+                                    <td class="amount-cell expense-amount">
+                                        -₦300.00
+                                    </td>
+
+                                    <td>
+                                        <span class="status completed">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="delete-btn">
+                                            ×
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr data-type="expense" data-category="Shopping">
+                                    <td>
+                                        Aug 03, 2026
+                                    </td>
+
+                                    <td>
+                                        <div class="description">
+                                            <div class="transaction-avatar shopping">
+                                                S
+                                            </div>
+
+                                            <div>
+                                                <strong>
+                                                    Groceries
+                                                </strong>
+
+                                                <small>
+                                                    Household items
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <span class="category shopping-category">
+                                            Shopping
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <span class="type expense-type">
+                                            Expense
+                                        </span>
+                                    </td>
+
+                                    <td class="amount-cell expense-amount">
+                                        -₦200.00
+                                    </td>
+
+                                    <td>
+                                        <span class="status completed">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="delete-btn">
+                                            ×
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="no-results" id="noResults">
+                            No transactions found.
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- ======================================
+         ADD TRANSACTION MODAL
+    ======================================= -->
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <h2>Add Transaction</h2>
+                    <p>
+                        Record a new income or expense
+                    </p>
+                </div>
+                <button class="close-modal" id="closeModal">
+                    ×
+                </button>
+            </div>
+
+            <form id="transactionForm">
+                <div class="form-group">
+                    <label>
+                        Transaction Type
+                    </label>
+                    <div class="type-buttons">
+                        <button type="button" class="type-button active" data-value="income">
+                            Income
+                        </button>
+
+                        <button type="button" class="type-button" data-value="expense">
+                            Expense
+                        </button>
+                    </div>
+                    <input type="hidden" id="transactionType" value="income">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <input type="text" id="description" placeholder="e.g. Salary" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amount">
+                            Amount
+                        </label>
+                        <input type="number" id="amount" placeholder="0.00" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">
+                            Category
+                        </label>
+
+                        <select id="category">
+                            <option value="Salary">
+                                Salary
+                            </option>
+
+                            <option value="Food">
+                                Food
+                            </option>
+
+                            <option value="Rent">
+                                Rent
+                            </option>
+
+                            <option value="Utilities">
+                                Utilities
+                            </option>
+
+                            <option value="Transportation">
+                                Transportation
+                            </option>
+
+                            <option value="Shopping">
+                                Shopping
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">
+                        Date
+                    </label>
+
+                    <input type="date" id="date" required>
+                </div>
+
+                <button type="submit" class="save-btn">
+                    Save Transaction
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="transaction.js"></script>
+</body>
+
+</html>

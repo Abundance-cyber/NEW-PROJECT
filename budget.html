@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nairapulse - Budgets</title>
+    <link rel="stylesheet" href="budget.css">
+</head>
+
+<body>
+    <!-- ==============================
+         PAGE
+    =============================== -->
+    <div class="app">
+        <!-- ==============================
+             BRAND
+        =============================== -->
+        <header class="brand">
+            <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 20L32 8L54 20L32 32L10 20Z" stroke="#00e676" stroke-width="3.5" fill="none"
+                    stroke-linejoin="round" />
+                <path d="M10 30L32 42L54 30" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+                <path d="M10 40L32 52L54 40" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+            </svg>
+
+            <h1>Nairapulse</h1>
+
+        </header>
+
+        <!-- ==============================
+             LAYOUT
+        =============================== -->
+
+        <div class="layout">
+
+            <!-- ==============================
+                 SIDEBAR
+            =============================== -->
+
+            <aside class="sidebar">
+                <div class="welcome">
+                    <div class="user-icon">
+                        👤
+                    </div>
+                    <h3>Welcome!</h3>
+                </div>
+                <nav class="navigation">
+                    <a href="dashboard.html" class="nav-item">
+                        <span class="nav-icon">⌂</span>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="transaction.html" class="nav-item">
+                        <span class="nav-icon">↔</span>
+                        <span>Transactions</span>
+                    </a>
+
+                    <a href="budget.html" class="nav-item active">
+                        <span class="nav-icon">▣</span>
+                        <span>Budgets</span>
+                    </a>
+
+                    <a href="reports.html" class="nav-item">
+                        <span class="nav-icon">▥</span>
+                        <span>Reports</span>
+                    </a>
+
+                    <a href="savings.html" class="nav-item">
+                        <span class="nav-icon">◎</span>
+                        <span>Savings Goals</span>
+                    </a>
+
+                    <a href="export.html" class="nav-item">
+                        <span class="nav-icon">⇩</span>
+                        <span>Export Data</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- ==============================
+                 MAIN CONTENT
+            =============================== -->
+
+            <main class="content">
+
+                <!-- PAGE TITLE -->
+
+                <div class="page-header">
+                    <div>
+                        <h2>Budgets</h2>
+                        <p>
+                            Manage your budget categories and spending limits
+                        </p>
+                    </div>
+
+                    <button class="create-btn" id="openBudgetModal">
+                        <span>+</span>
+                        Create Budget
+                    </button>
+                </div>
+
+                <!-- ==============================
+                     SUMMARY CARDS
+                =============================== -->
+
+                <section class="summary-grid">
+                    <div class="summary-card">
+                        <div class="summary-icon blue">
+                            ₦
+                        </div>
+                        <div>
+                            <p>Total Budget</p>
+                            <h3 class="blue-text" data-budget="total">
+                                ₦15,000.00
+                            </h3>
+                            <small>
+                                Across 6 categories
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon red">
+                            ↘
+                        </div>
+
+                        <div>
+                            <p>Total Spent</p>
+                            <h3 class="red-text" data-budget="spent">
+                                ₦4,850.00
+                            </h3>
+
+                            <small>
+                                This month
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon yellow">
+                            ◔
+                        </div>
+
+                        <div>
+                            <p>Remaining</p>
+                            <h3 class="yellow-text" data-budget="remaining">
+                                ₦10,150.00
+                            </h3>
+
+                            <small>
+                                67.7% of budget left
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon purple">
+                            %
+                        </div>
+
+                        <div>
+                            <p>Avg. Usage</p>
+                            <h3 class="purple-text" data-budget="usage">
+                                32.3%
+                            </h3>
+
+                            <small>
+                                Across all categories
+                            </small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================
+                     OVERVIEW + CATEGORY
+                =============================== -->
+
+                <section class="middle-grid">
+
+                    <!-- ==============================
+                         BUDGET OVERVIEW
+                    =============================== -->
+
+                    <div class="panel overview-panel">
+                        <h3>Budget Overview</h3>
+
+                        <div class="overview-content">
+
+                            <!-- DONUT -->
+
+                            <div class="donut-wrapper">
+                                <div class="donut">
+                                    <div class="donut-center">
+                                        <strong>
+                                            ₦15,000
+                                        </strong>
+
+                                        <span>
+                                            Total Budget
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LEGEND -->
+
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <span class="dot rent"></span>
+                                    <span>Rent</span>
+                                    <strong>
+                                        ₦4,000
+                                    </strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="dot food"></span>
+                                    <span>Food</span>
+                                    <strong>
+                                        ₦3,000
+                                    </strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="dot transport"></span>
+                                    <span>Transportation</span>
+                                    <strong>
+                                        ₦2,500
+                                    </strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="dot utilities"></span>
+                                    <span>Utilities</span>
+                                    <strong>
+                                        ₦2,500
+                                    </strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="dot shopping"></span>
+                                    <span>Shopping</span>
+                                    <strong>
+                                        ₦2,000
+                                    </strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="dot entertainment"></span>
+                                    <span>Entertainment</span>
+                                    <strong>
+                                        ₦1,000
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==============================
+                         BUDGET BY CATEGORY
+                    =============================== -->
+
+                    <div class="panel category-panel">
+                        <h3>Budget by Category</h3>
+
+                        <div class="budget-table">
+
+                            <div class="table-head">
+                                <span>Category</span>
+                                <span>Budget</span>
+                                <span>Spent</span>
+                                <span>Remaining</span>
+                                <span>Progress</span>
+                                <span>Action</span>
+                            </div>
+
+                            <!-- RENT -->
+
+                            <div class="budget-row" data-budget="4000" data-spent="1800">
+                                <div class="category-name">
+                                    <span class="category-icon rent">
+                                        ⌂
+                                    </span>
+                                    Rent
+                                </div>
+                                <span>
+                                    ₦4,000.00
+                                </span>
+                                <span class="spent">
+                                    ₦1,800.00
+                                </span>
+                                <span class="remaining">
+                                    ₦2,200.00
+                                </span>
+                                <div class="progress-area">
+                                    <div class="progress">
+                                        <div class="progress-bar rent-bar" style="width:45%"></div>
+                                    </div>
+                                    <span>45%</span>
+                                </div>
+                                <button class="more-btn">
+                                    ⋮
+                                </button>
+                            </div>
+
+                            <!-- FOOD -->
+
+                            <div class="budget-row" data-budget="3000" data-spent="1250">
+                                <div class="category-name">
+                                    <span class="category-icon food">
+                                        🍴
+                                    </span>
+                                    Food
+                                </div>
+                                <span>
+                                    ₦3,000.00
+                                </span>
+                                <span class="spent">
+                                    ₦1,250.00
+                                </span>
+                                <span class="remaining">
+                                    ₦1,750.00
+                                </span>
+                                <div class="progress-area">
+                                    <div class="progress">
+                                        <div class="progress-bar food-bar" style="width:41.7%"></div>
+                                    </div>
+                                    <span>41%</span>
+                                </div>
+                                <button class="more-btn">
+                                    ⋮
+                                </button>
+                            </div>
+
+                            <!-- TRANSPORT -->
+
+                            <div class="budget-row" data-budget="2500" data-spent="850">
+                                <div class="category-name">
+                                    <span class="category-icon transport">
+                                        🚗
+                                    </span>
+                                    Transportation
+                                </div>
+                                <span>
+                                    ₦2,500.00
+                                </span>
+                                <span class="spent">
+                                    ₦850.00
+                                </span>
+                                <span class="remaining">
+                                    ₦1,650.00
+                                </span>
+                                <div class="progress-area">
+                                    <div class="progress">
+                                        <div class="progress-bar transport-bar" style="width:34%"></div>
+                                    </div>
+                                    <span>34%</span>
+                                </div>
+                                <button class="more-btn">
+                                    ⋮
+                                </button>
+                            </div>
+
+                            <!-- UTILITIES -->
+
+                            <div class="budget-row" data-budget="2500" data-spent="450">
+                                <div class="category-name">
+                                    <span class="category-icon utilities">
+                                        ⚡
+                                    </span>
+                                    Utilities
+                                </div>
+                                <span>
+                                    ₦2,500.00
+                                </span>
+                                <span class="spent">
+                                    ₦450.00
+                                </span>
+                                <span class="remaining">
+                                    ₦2,050.00
+                                </span>
+                                <div class="progress-area">
+                                    <div class="progress">
+                                        <div class="progress-bar utilities-bar" style="width:18%"></div>
+                                    </div>
+                                    <span>18%</span>
+                                </div>
+                                <button class="more-btn">
+                                    ⋮
+                                </button>
+                            </div>
+
+                            <!-- SHOPPING -->
+
+                            <div class="budget-row" data-budget="2000" data-spent="300">
+                                <div class="category-name">
+                                    <span class="category-icon shopping">
+                                        🛍
+                                    </span>
+                                    Shopping
+                                </div>
+                                <span>
+                                    ₦2,000.00
+                                </span>
+                                <span class="spent">
+                                    ₦300.00
+                                </span>
+                                <span class="remaining">
+                                    ₦1,700.00
+                                </span>
+                                <div class="progress-area">
+                                    <div class="progress">
+                                        <div class="progress-bar shopping-bar" style="width:15%"></div>
+                                    </div>
+                                    <span>15%</span>
+                                </div>
+                                <button class="more-btn">
+                                    ⋮
+                                </button>
+                            </div>
+
+                            <!-- ENTERTAINMENT -->
+
+                            <div class="budget-row" data-budget="1000" data-spent="200">
+                                <div class="category-name">
+                                    <span class="category-icon entertainment">
+                                        🎮
+                                    </span>
+                                    Entertainment
+                                </div>
+                                <span>
+                                    ₦1,000.00
+                                </span>
+                                <span class="spent">
+                                    ₦200.00
+                                </span>
+                                <span class="remaining">
+                                    ₦800.00
+                                </span>
+                                <div class="progress-area">
+                                    <div class="progress">
+                                        <div class="progress-bar entertainment-bar" style="width:20%"></div>
+                                    </div>
+                                    <span>20%</span>
+                                </div>
+                                <button class="more-btn">
+                                    ⋮
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================
+                     RECENT ACTIVITY
+                =============================== -->
+
+                <section class="panel activity-panel">
+                    <div class="activity-header">
+                        <div>
+                            <h3>
+                                Recent Budget Activity
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="activity-table">
+                        <div class="activity-head">
+                            <span>Date</span>
+                            <span>Category</span>
+                            <span>Description</span>
+                            <span>Amount</span>
+                            <span>Status</span>
+                        </div>
+
+                        <div class="activity-row">
+                            <span>
+                                Jun 26, 2026
+                            </span>
+                            <span class="activity-category">
+                                <span class="small-icon food">
+                                    🍴
+                                </span>
+                                Food
+                            </span>
+                            <span>
+                                Grocery shopping
+                            </span>
+                            <strong class="expense">
+                                -₦250.00
+                            </strong>
+                            <span class="on-budget">
+                                On Budget
+                            </span>
+                        </div>
+
+                        <div class="activity-row">
+                            <span>
+                                Jun 25, 2026
+                            </span>
+                            <span class="activity-category">
+                                <span class="small-icon rent">
+                                    ⌂
+                                </span>
+                                Rent
+                            </span>
+                            <span>
+                                Apartment rent payment
+                            </span>
+                            <strong class="expense">
+                                -₦1,800.00
+                            </strong>
+                            <span class="on-budget">
+                                On Budget
+                            </span>
+                        </div>
+
+                        <div class="activity-row">
+                            <span>
+                                Jun 24, 2026
+                            </span>
+                            <span class="activity-category">
+                                <span class="small-icon utilities">
+                                    ⚡
+                                </span>
+                                Utilities
+                            </span>
+                            <span>
+                                Electricity bill
+                            </span>
+                            <strong class="expense">
+                                -₦200.00
+                            </strong>
+                            <span class="on-budget">
+                                On Budget
+                            </span>
+                        </div>
+                    </div>
+                    <button class="view-all" id="viewActivity">
+                        View all budget activity
+                    </button>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- ==============================
+         CREATE BUDGET MODAL
+    =============================== -->
+
+    <div class="modal-overlay" id="budgetModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <h2>
+                        Create Budget
+                    </h2>
+                    <p>
+                        Set a spending limit for a category
+                    </p>
+                </div>
+
+                <button class="close-modal" id="closeBudgetModal">
+                    ×
+                </button>
+            </div>
+
+            <form id="budgetForm">
+                <div class="form-group">
+    <label for="budgetCategory">
+        Category
+    </label>
+
+    <input
+        type="text"
+        id="budgetCategory"
+        placeholder="e.g. School Fees, Church, Business"
+        required
+    >
+</div>
+
+                <div class="form-group">
+                    <label>
+                        Budget Amount
+                    </label>
+                    <input type="number" id="budgetAmount" placeholder="e.g. 3000" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Budget Period
+                    </label>
+                    <select id="budgetPeriod">
+                        <option value="monthly">
+                            Monthly
+                        </option>
+                        <option value="weekly">
+                            Weekly
+                        </option>
+                        <option value="yearly">
+                            Yearly
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit" class="save-budget">
+                    Create Budget
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="budget.js"></script>
+</body>
+
+</html>

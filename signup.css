@@ -1,0 +1,398 @@
+/* =========================================
+   NAIRAPULSE SIGNUP PAGE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #020b17;
+
+    color: white;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.signup-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 20px;
+
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.brand-logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.brand-logo svg {
+
+    width: 48px;
+
+    height: 48px;
+
+}
+
+
+.brand h1 {
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================
+   SIGNUP CARD
+========================================= */
+
+.signup-card {
+
+    width: 100%;
+
+    max-width: 460px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061827,
+            #04111e
+        );
+
+    border: 1px solid #1c344b;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.signup-heading {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.signup-heading h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.signup-heading p {
+
+    color: #aebaca;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+
+    margin-bottom: 17px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.form-group input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    background: #071727;
+
+    color: white;
+
+    border: 1px solid #294158;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 14px;
+
+}
+
+
+.form-group input:focus {
+
+    border-color: #10b957;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(16, 185, 87, 0.12);
+
+}
+
+
+.form-group input::placeholder {
+
+    color: #718094;
+
+}
+
+
+/* =========================================
+   TERMS
+========================================= */
+
+.terms {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 5px 0 15px;
+
+    color: #aebaca;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+}
+
+
+.terms input {
+
+    width: 16px;
+
+    height: 16px;
+
+    accent-color: #10b957;
+
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.signup-message {
+
+    min-height: 20px;
+
+    margin-bottom: 8px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   SIGNUP BUTTON
+========================================= */
+
+.signup-btn {
+
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #10b957;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.signup-btn:hover {
+
+    background: #0cc05a;
+
+}
+
+
+.signup-btn:active {
+
+    transform: translateY(1px);
+
+}
+
+
+/* =========================================
+   LOGIN LINK
+========================================= */
+
+.login-link {
+
+    margin-top: 22px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #aebaca;
+
+}
+
+
+.login-link a {
+
+    margin-left: 5px;
+
+    color: #00d864;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.login-link a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+
+    .signup-page {
+
+        padding: 20px 14px;
+
+    }
+
+
+    .signup-card {
+
+        padding: 22px;
+
+    }
+
+
+    .signup-heading h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .brand h1 {
+
+        font-size: 25px;
+
+    }
+
+}

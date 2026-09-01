@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NairaPulse - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- ================= PAGE ================= -->
+
+    <div class="login-page">
+
+        <!-- ================= LOGO ================= -->
+
+        <header class="brand">
+            <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 20L32 8L54 20L32 32L10 20Z" stroke="#00e676" stroke-width="3.5" fill="none"
+                    stroke-linejoin="round" />
+                <path d="M10 30L32 42L54 30" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+                <path d="M10 40L32 52L54 40" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+            </svg>
+
+            <h1>Nairapulse</h1>
+        </header>
+
+        <!-- ================= LOGIN AREA ================= -->
+
+        <main class="login-container">
+            <section class="login-card">
+
+                <!-- Icon -->
+
+                <div class="login-icon">
+                    <span>↪</span>
+                </div>
+                <h2>Welcome Back!</h2>
+                <p class="login-subtitle">
+                    Login to continue managing your money.
+                </p>
+
+                <!-- ================= FORM ================= -->
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email Address
+                        </label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="password-label">
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <a href="#" id="forgotPassword">
+                                Forgot Password?
+                            </a>
+                        </div>
+                        <div class="password-box">
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                            <button type="button" id="togglePassword" class="toggle-password">
+                                👁
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="remember-row">
+                        <label class="remember">
+                            <input type="checkbox" id="remember">
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        Login
+                    </button>
+                    <p id="loginMessage" class="login-message"></p>
+                </form>
+
+                <div class="signup-section">
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <a href="signup.html">
+                        Sign Up
+                    </a>
+                </div>
+            </section>
+
+            <!-- ================= RIGHT SIDE ================= -->
+
+            <section class="login-info">
+                <div class="info-content">
+                    <div class="info-icon">
+                        ₦
+                    </div>
+                    <h2>
+                        Take Control of<br>
+                        Your Naira.
+                    </h2>
+                    <p>
+                        Track your income, manage your expenses,
+                        set budgets and achieve your savings goals
+                        all in one place.
+                    </p>
+
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Track Your Money
+                                </h3>
+                                <p>
+                                    Know exactly where your money goes.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon blue">
+                                ₦
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Manage Your Budget
+                                </h3>
+
+                                <p>
+                                    Stay within your spending limits.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon purple">
+                                ★
+                            </div>
+                            <div>
+                                <h3>
+                                    Reach Your Goals
+                                </h3>
+                                <p>
+                                    Build better saving habits.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+            <p>
+                © 2026 NairaPulse. Take control of your Naira.
+            </p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="login.js"></script>
+</body>
+
+</html>

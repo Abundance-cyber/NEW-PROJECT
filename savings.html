@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nairapulse - Savings Goals</title>
+    <link rel="stylesheet" href="savings.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <!-- ================= HEADER ================= -->
+        <header class="brand">
+            <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 20L32 8L54 20L32 32L10 20Z" stroke="#00e676" stroke-width="3.5" fill="none"
+                    stroke-linejoin="round" />
+                <path d="M10 30L32 42L54 30" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+                <path d="M10 40L32 52L54 40" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+            </svg>
+
+            <h1>Nairapulse</h1>
+        </header>
+
+        <!-- ================= MAIN LAYOUT ================= -->
+        <div class="main-layout">
+
+            <!-- ================= SIDEBAR ================= -->
+            <aside class="sidebar">
+                <div class="welcome">
+                    <div class="user-icon">
+                        <span>👤</span>
+                    </div>
+                    <h3>Welcome!</h3>
+                </div>
+
+                <nav class="menu">
+                    <a href="dashboard.html" class="menu-item">
+                        <span class="menu-icon">⌂</span>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="transaction.html" class="menu-item">
+                        <span class="menu-icon">↔</span>
+                        <span>Transactions</span>
+                    </a>
+
+                    <a href="budget.html" class="menu-item">
+                        <span class="menu-icon">▣</span>
+                        <span>Budgets</span>
+                    </a>
+
+                    <a href="reports.html" class="menu-item">
+                        <span class="menu-icon">▥</span>
+                        <span>Reports</span>
+                    </a>
+
+                    <!-- ACTIVE -->
+                    <a href="savings.html" class="menu-item active">
+                        <span class="menu-icon">◎</span>
+                        <span>Savings Goals</span>
+                    </a>
+
+                    <a href="export.html" class="menu-item">
+                        <span class="menu-icon">⇩</span>
+                        <span>Export Data</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- ================= CONTENT ================= -->
+            <main class="content">
+
+                <!-- PAGE HEADER -->
+                <section class="page-header">
+                    <div>
+                        <h2>Savings Goals</h2>
+                        <p>Track your progress and achieve your financial goals</p>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="month-btn">
+                            <span>▣</span>
+                            This Month
+                            <span>⌄</span>
+                        </button>
+
+                        <button class="create-btn" id="createGoalBtn">
+                            <span>＋</span>
+                            Create Goal
+                        </button>
+                    </div>
+                </section>
+
+                <!-- ================= SUMMARY CARDS ================= -->
+                <section class="summary-grid">
+
+                    <!-- TOTAL GOALS -->
+                    <div class="summary-card">
+                        <div class="summary-icon green">
+                            ◎
+                        </div>
+
+                        <div class="summary-info" data-savings="goals">
+                            <h4>TOTAL GOALS</h4>
+                            <strong class="green-text">6</strong>
+                            <p>Active savings goals</p>
+                        </div>
+                    </div>
+
+                    <!-- TOTAL SAVED -->
+                    <div class="summary-card">
+                        <div class="summary-icon blue">
+                            ▣
+                        </div>
+
+                        <div class="summary-info" data-savings="saved">
+                            <h4>TOTAL SAVED</h4>
+                            <strong class="blue-text">₦145,000.00</strong>
+                            <p>Across all goals</p>
+                        </div>
+                    </div>
+
+                    <!-- TOTAL TARGET -->
+                    <div class="summary-card">
+                        <div class="summary-icon purple">
+                            ↗
+                        </div>
+
+                        <div class="summary-info" data-savings="target">
+                            <h4>TOTAL TARGET</h4>
+                            <strong class="purple-text">₦350,000.00</strong>
+                            <p>Combined goal amount</p>
+                        </div>
+                    </div>
+
+                    <!-- OVERALL PROGRESS -->
+                    <div class="summary-card">
+                        <div class="summary-icon yellow">
+                            ◔
+                        </div>
+
+                        <div class="summary-info" data-savings="progress">
+                            <h4>OVERALL PROGRESS</h4>
+                            <strong class="yellow-text">41.4%</strong>
+                            <p>You're doing great!</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= MIDDLE SECTION ================= -->
+                <section class="middle-grid">
+
+                    <!-- GOALS OVERVIEW -->
+                    <div class="panel overview-panel">
+                        <h3>Goals Overview</h3>
+                        <div class="overview-content">
+                            <div class="donut-container">
+                                <div class="donut">
+                                    <div class="donut-center">
+                                        <strong>41.4%</strong>
+                                        <span>Overall Progress</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="goal-legend">
+
+                                <div class="legend-item">
+                                    <span class="legend-color green"></span>
+                                    <span>Emergency Fund</span>
+                                    <strong>₦45,000</strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-color blue"></span>
+                                    <span>New Laptop</span>
+                                    <strong>₦35,000</strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-color purple"></span>
+                                    <span>Vacation</span>
+                                    <strong>₦25,000</strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-color yellow"></span>
+                                    <span>House Down Payment</span>
+                                    <strong>₦20,000</strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-color orange"></span>
+                                    <span>Car Fund</span>
+                                    <strong>₦15,000</strong>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-color red"></span>
+                                    <span>Education Fund</span>
+                                    <strong>₦5,000</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UPCOMING CONTRIBUTIONS -->
+                    <div class="panel upcoming-panel">
+                        <h3>Upcoming Contributions</h3>
+                        <div class="contribution-list">
+                            <div class="contribution">
+
+                                <div class="contribution-icon green">
+                                    ▣
+                                </div>
+
+                                <div class="contribution-info">
+                                    <strong>Emergency Fund</strong>
+                                    <span>Due in 3 days</span>
+                                </div>
+
+                                <strong class="amount green-text">
+                                    ₦15,000.00
+                                </strong>
+                            </div>
+
+                            <div class="contribution">
+                                <div class="contribution-icon blue">
+                                    ▣
+                                </div>
+
+                                <div class="contribution-info">
+                                    <strong>New Laptop</strong>
+                                    <span>Due in 7 days</span>
+                                </div>
+                                <strong class="amount blue-text">
+                                    ₦10,000.00
+                                </strong>
+                            </div>
+
+                            <div class="contribution">
+                                <div class="contribution-icon purple">
+                                    ✈
+                                </div>
+
+                                <div class="contribution-info">
+                                    <strong>Vacation</strong>
+                                    <span>Due in 12 days</span>
+                                </div>
+
+                                <strong class="amount purple-text">
+                                    ₦8,000.00
+                                </strong>
+                            </div>
+
+                            <div class="contribution">
+                                <div class="contribution-icon yellow">
+                                    ⌂
+                                </div>
+
+                                <div class="contribution-info">
+                                    <strong>House Down Payment</strong>
+                                    <span>Due in 15 days</span>
+                                </div>
+
+                                <strong class="amount yellow-text">
+                                    ₦12,000.00
+                                </strong>
+                            </div>
+                        </div>
+                        <button class="view-upcoming">
+                            View all upcoming →
+                        </button>
+                    </div>
+                </section>
+
+                <!-- ================= ALL SAVINGS GOALS ================= -->
+                <section class="panel goals-panel">
+                    <h3>All Savings Goals</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Goal Name</th>
+                                    <th>Target Amount</th>
+                                    <th>Saved Amount</th>
+                                    <th>Progress</th>
+                                    <th>Target Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="goalsTableBody">
+                                <!-- EMERGENCY FUND -->
+                                <tr>
+                                    <td>
+                                        <div class="goal-name">
+                                            <span class="goal-icon green">♢</span>
+                                            Emergency Fund
+                                        </div>
+                                    </td>
+                                    <td class="target-amount">₦100,000.00</td>
+                                    <td class="saved">₦45,000.00</td>
+                                    <td>
+                                        <div class="progress-container">
+                                            <div class="progress-bar">
+                                                <span class="green-bar" style="width:45%">
+                                                </span>
+                                            </div>
+                                            <span>45%</span>
+                                        </div>
+                                    </td>
+                                    <td>Dec 31, 2024</td>
+                                    <td>
+                                        <span class="status on-track">
+                                            On Track
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="action-btn">⋮</button>
+                                    </td>
+                                </tr>
+
+                                <!-- LAPTOP -->
+                                <tr>
+                                    <td>
+                                        <div class="goal-name">
+                                            <span class="goal-icon blue">▣</span>
+                                            New Laptop
+                                        </div>
+                                    </td>
+                                    <td class="target-amount">₦80,000.00</td>
+                                    <td class="saved">₦35,000.00</td>
+                                    <td>
+                                        <div class="progress-container">
+                                            <div class="progress-bar">
+                                                <span class="blue-bar" style="width:43%">
+                                                </span>
+                                            </div>
+                                            <span>43%</span>
+                                        </div>
+                                    </td>
+                                    <td>Oct 15, 2024</td>
+                                    <td>
+                                        <span class="status on-track">
+                                            On Track
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="action-btn">⋮</button>
+                                    </td>
+                                </tr>
+
+                                <!-- VACATION -->
+                                <tr>
+                                    <td>
+                                        <div class="goal-name">
+                                            <span class="goal-icon purple">✈</span>
+                                            Vacation
+                                        </div>
+                                    </td>
+                                    <td class="target-amount">₦60,000.00</td>
+                                    <td class="saved">₦25,000.00</td>
+                                    <td>
+                                        <div class="progress-container">
+                                            <div class="progress-bar">
+                                                <span class="purple-bar" style="width:42%">
+                                                </span>
+                                            </div>
+                                            <span>42%</span>
+                                        </div>
+                                    </td>
+                                    <td>Aug 20, 2024</td>
+                                    <td>
+                                        <span class="status on-track">
+                                            On Track
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="action-btn">⋮</button>
+                                    </td>
+                                </tr>
+
+                                <!-- HOUSE -->
+                                <tr>
+                                    <td>
+                                        <div class="goal-name">
+                                            <span class="goal-icon yellow">⌂</span>
+                                            House Down Payment
+                                        </div>
+                                    </td>
+                                    <td class="target-amount">₦150,000.00</td>
+                                    <td class="saved">₦20,000.00</td>
+                                    <td>
+                                        <div class="progress-container">
+                                            <div class="progress-bar">
+                                                <span class="yellow-bar" style="width:13%">
+                                                </span>
+                                            </div>
+                                            <span>13%</span>
+                                        </div>
+                                    </td>
+                                    <td>Dec 31, 2025</td>
+                                    <td>
+                                        <span class="status behind">
+                                            Behind
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="action-btn">⋮</button>
+                                    </td>
+                                </tr>
+
+                                <!-- CAR -->
+                                <tr>
+                                    <td>
+                                        <div class="goal-name">
+                                            <span class="goal-icon orange">🚗</span>
+                                            Car Fund
+                                        </div>
+                                    </td>
+                                    <td class="target-amount">₦75,000.00</td>
+                                    <td class="saved">₦15,000.00</td>
+                                    <td>
+                                        <div class="progress-container">
+                                            <div class="progress-bar">
+                                                <span class="orange-bar" style="width:20%">
+                                                </span>
+                                            </div>
+                                            <span>20%</span>
+                                        </div>
+                                    </td>
+                                    <td>May 10, 2025</td>
+                                    <td>
+                                        <span class="status on-track">
+                                            On Track
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="action-btn">⋮</button>
+                                    </td>
+                                </tr>
+
+                                <!-- EDUCATION -->
+                                <tr>
+                                    <td>
+                                        <div class="goal-name">
+                                            <span class="goal-icon red">◆</span>
+                                            Education Fund
+                                        </div>
+                                    </td>
+                                    <td class="target-amount">₦30,000.00</td>
+                                    <td class="saved">₦5,000.00</td>
+                                    <td>
+                                        <div class="progress-container">
+                                            <div class="progress-bar">
+                                                <span class="red-bar" style="width:17%">
+                                                </span>
+                                            </div>
+                                            <span>17%</span>
+                                        </div>
+                                    </td>
+                                    <td>Sep 1, 2024</td>
+                                    <td>
+                                        <span class="status behind">
+                                            Behind
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="action-btn">⋮</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="savings.js"></script>
+</body>
+
+</html>

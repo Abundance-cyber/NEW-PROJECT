@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NairaPulse - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- ================= HEADER ================= -->
+        <header class="brand">
+            <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 20L32 8L54 20L32 32L10 20Z" stroke="#00e676" stroke-width="3.5" fill="none"
+                    stroke-linejoin="round" />
+                <path d="M10 30L32 42L54 30" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+                <path d="M10 40L32 52L54 40" stroke="#00e676" stroke-width="3.5" fill="none" stroke-linejoin="round" />
+            </svg>
+
+            <h1>Nairapulse</h1>
+        </header>
+
+        <!-- ================= MAIN LAYOUT ================= -->
+
+        <div class="main-layout">
+
+            <!-- ================= SIDEBAR ================= -->
+
+            <aside class="sidebar">
+                <div class="welcome">
+                    <div class="user-icon">
+                        <span>👤</span>
+                    </div>
+                    <h3>Welcome!</h3>
+                </div>
+
+                <nav class="menu">
+                    <a href="dashboard.html" class="menu-item active">
+                        <span class="menu-icon">⌂</span>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="transaction.html" class="menu-item">
+                        <span class="menu-icon">↔</span>
+                        <span>Transactions</span>
+                    </a>
+
+                    <a href="budget.html" class="menu-item">
+                        <span class="menu-icon">▣</span>
+                        <span>Budgets</span>
+                    </a>
+
+                    <a href="reports.html" class="menu-item">
+                        <span class="menu-icon">▥</span>
+                        <span>Reports</span>
+                    </a>
+
+                    <a href="savings.html" class="menu-item">
+                        <span class="menu-icon">◎</span>
+                        <span>Savings Goals</span>
+                    </a>
+
+                    <a href="export.html" class="menu-item">
+                        <span class="menu-icon">⇩</span>
+                        <span>Export Data</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- ================= CONTENT ================= -->
+
+            <main class="content">
+
+                <!-- ================= PAGE HEADER ================= -->
+
+                <div class="page-header">
+                    <div>
+                        <h2>Dashboard</h2>
+                        <p>
+                            Overview of your financial activity
+                        </p>
+                    </div>
+
+                    <button class="date-button">
+                        <span class="calendar-icon">▣</span>
+                        <span>Jun 1 – Jun 30, 2024</span>
+                        <span class="arrow">⌄</span>
+                    </button>
+                </div>
+
+                <!-- ================= SUMMARY CARDS ================= -->
+
+                <section class="cards">
+
+                    <!-- TOTAL BALANCE -->
+
+                    <div class="card">
+                        <div class="card-icon green">
+                            ₦
+                        </div>
+
+                        <div class="card-content">
+
+                            <div class="card-title">
+                                TOTAL BALANCE
+                            </div>
+                            <div class="card-value white" data-value="balance">
+                                ₦11,500.00
+                            </div>
+
+                            <div class="card-subtitle">
+                                On Total Balance
+                                <span class="info">i</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MONTHLY INCOME -->
+
+                    <div class="card">
+                        <div class="card-icon blue">
+                            ↗
+                        </div>
+
+                        <div class="card-content">
+                            <div class="card-title">
+                                MONTHLY INCOME
+                            </div>
+                            <div class="card-value blue" data-value="income">
+                                ₦12,000.00
+                            </div>
+
+                            <div class="card-subtitle">
+                                This Month
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MONTHLY EXPENSES -->
+
+                    <div class="card">
+                        <div class="card-icon red">
+                            ↘
+                        </div>
+
+                        <div class="card-content">
+                            <div class="card-title">
+                                MONTHLY EXPENSES
+                            </div>
+                            <div class="card-value red"  data-value="expenses">
+                                ₦850.00
+                            </div>
+                            <div class="card-subtitle">
+                                This Month
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SAVINGS RATE -->
+
+                    <div class="card">
+                        <div class="card-icon green">
+                            ◔
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">
+                                SAVINGS RATE
+                            </div>
+                            <div class="card-value green" data-value="savingsRate">
+                                92.9%
+                            </div>
+                            <div class="card-subtitle">
+                                This Month
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= CHART SECTION ================= -->
+
+                <section class="chart-layout">
+
+                    <!-- ================= PIE CHART ================= -->
+
+                    <div class="chart-card">
+                        <h2>
+                            SPENDING BY CATEGORY
+                        </h2>
+
+                        <div class="pie-section">
+                            <div class="donut-container">
+                                <div class="donut-chart">
+                                    <div class="donut-center">
+                                        <strong>
+                                            ₦850.00
+                                        </strong>
+
+                                        <span>
+                                            Total Expense
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PIE LEGEND -->
+
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <span class="legend-color food"></span>
+                                    <span class="legend-name">
+                                        Food
+                                    </span>
+                                    <span class="legend-percent">
+                                        25%
+                                    </span>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-color rent"></span>
+                                    <span class="legend-name">
+                                        Rent
+                                    </span>
+
+                                    <span class="legend-percent">
+                                        20%
+                                    </span>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-color utilities"></span>
+                                    <span class="legend-name">
+                                        Utilities
+                                    </span>
+
+                                    <span class="legend-percent">
+                                        25%
+                                    </span>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-color transportation"></span>
+                                    <span class="legend-name">
+                                        Transport
+                                    </span>
+                                    <span class="legend-percent">
+                                        15%
+                                    </span>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-color shopping"></span>
+                                    <span class="legend-name">
+                                        Shopping
+                                    </span>
+                                    <span class="legend-percent">
+                                        15%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= BAR CHART ================= -->
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h2>
+                                MONTHLY OVERVIEW
+                            </h2>
+
+                            <div class="chart-legend">
+                                <span>
+                                    <i class="income-dot"></i>
+                                    Income
+                                </span>
+
+                                <span>
+                                    <i class="expense-dot"></i>
+                                    Expenses
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="bar-chart">
+
+                            <!-- Y AXIS -->
+
+                            <div class="y-axis">
+                                <span>₦12K</span>
+                                <span>₦9K</span>
+                                <span>₦6K</span>
+                                <span>₦3K</span>
+                                <span>₦0</span>
+                            </div>
+
+                            <!-- CHART AREA -->
+
+                            <div class="chart-area">
+                                <div class="grid-line line-1"></div>
+                                <div class="grid-line line-2"></div>
+                                <div class="grid-line line-3"></div>
+                                <div class="grid-line line-4"></div>
+                                <div class="grid-line line-5"></div>
+
+                                <!-- JAN -->
+
+                                <div class="month">
+                                    <div class="bars">
+                                        <div class="bar income" style="height: 58%;"></div>
+                                        <div class="bar expense" style="height: 21%;"></div>
+                                    </div>
+
+                                    <span>Jan</span>
+                                </div>
+
+                                <!-- FEB -->
+                                <div class="month">
+                                    <div class="bars">
+                                        <div class="bar income" style="height: 77%;"></div>
+                                        <div class="bar expense" style="height: 23%;"></div>
+                                    </div>
+                                    <span>Feb</span>
+                                </div>
+
+                                <!-- MAR -->
+
+                                <div class="month">
+                                    <div class="bars">
+                                        <div class="bar income" style="height: 88%;"></div>
+                                        <div class="bar expense" style="height: 25%;"></div>
+                                    </div>
+                                    <span>Mar</span>
+                                </div>
+
+                                <!-- APR -->
+
+                                <div class="month">
+                                    <div class="bars">
+                                        <div class="bar income" style="height: 84%;"></div>
+                                        <div class="bar expense" style="height: 22%;"></div>
+                                    </div>
+                                    <span>Apr</span>
+                                </div>
+
+                                <!-- MAY -->
+                                <div class="month">
+                                    <div class="bars">
+                                        <div class="bar income" style="height: 100%;"></div>
+                                        <div class="bar expense" style="height: 29%;"></div>
+                                    </div>
+                                    <span>May</span>
+                                </div>
+
+                                <!-- JUN -->
+
+                                <div class="month">
+                                    <div class="bars">
+                                        <div class="bar income" style="height: 100%;"></div>
+                                        <div class="bar expense" style="height: 25%;"></div>
+                                    </div>
+                                    <span>Jun</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

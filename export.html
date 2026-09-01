@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nairapulse - Export Data</title>
+
+    <link rel="stylesheet" href="export.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= HEADER ================= -->
+    <header class="brand">
+
+        <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+
+            <path d="M10 20L32 8L54 20L32 32L10 20Z"
+                stroke="#00e676"
+                stroke-width="3.5"
+                fill="none"
+                stroke-linejoin="round"/>
+
+            <path d="M10 30L32 42L54 30"
+                stroke="#00e676"
+                stroke-width="3.5"
+                fill="none"
+                stroke-linejoin="round"/>
+
+            <path d="M10 40L32 52L54 40"
+                stroke="#00e676"
+                stroke-width="3.5"
+                fill="none"
+                stroke-linejoin="round"/>
+
+        </svg>
+
+        <h1>Nairapulse</h1>
+
+    </header>
+
+
+    <!-- ================= MAIN LAYOUT ================= -->
+
+    <div class="main-layout">
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="welcome">
+
+                <div class="user-icon">
+                    👤
+                </div>
+
+                <h3>Welcome!</h3>
+
+            </div>
+
+
+            <nav class="menu">
+
+                <a href="dashboard.html" class="menu-item">
+                    <span class="menu-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="transaction.html" class="menu-item">
+                    <span class="menu-icon">↔</span>
+                    <span>Transactions</span>
+                </a>
+
+                <a href="budget.html" class="menu-item">
+                    <span class="menu-icon">▣</span>
+                    <span>Budgets</span>
+                </a>
+
+                <a href="reports.html" class="menu-item">
+                    <span class="menu-icon">▥</span>
+                    <span>Reports</span>
+                </a>
+
+                <a href="savings.html" class="menu-item">
+                    <span class="menu-icon">◎</span>
+                    <span>Savings Goals</span>
+                </a>
+
+                <a href="export.html" class="menu-item active">
+                    <span class="menu-icon">⇩</span>
+                    <span>Export Data</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <main class="content">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <h2>Export Data</h2>
+
+                    <p>
+                        Export all your financial data from across the entire Nairapulse platform.
+                    </p>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <select id="monthSelect">
+
+                        <option>This Month</option>
+                        <option>Last Month</option>
+                        <option>Last 3 Months</option>
+                        <option>This Year</option>
+
+                    </select>
+
+
+                    <button class="export-all-btn" id="exportAllBtn">
+
+                        ⇩ &nbsp; Export All Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SUMMARY CARDS ================= -->
+
+            <section class="summary-cards">
+
+
+                <!-- TOTAL RECORDS -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon blue">
+                        ▤
+                    </div>
+
+                    <div>
+
+                        <h4>Total Records</h4>
+
+                        <strong
+                            class="blue-text"
+                            id="exportTotalRecords">
+                            0
+                        </strong>
+
+                        <p>Across all modules</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CATEGORIES -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon green">
+                        ▦
+                    </div>
+
+                    <div>
+
+                        <h4>Categories</h4>
+
+                        <strong
+                            class="green-text"
+                            id="exportCategories">
+                            0
+                        </strong>
+
+                        <p>Active categories</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUDGETS -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon orange">
+                        ▣
+                    </div>
+
+                    <div>
+
+                        <h4>Budgets</h4>
+
+                        <strong
+                            class="orange-text"
+                            id="exportBudgets">
+                            0
+                        </strong>
+
+                        <p>Across all categories</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SAVINGS GOALS -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon purple">
+                        ◎
+                    </div>
+
+                    <div>
+
+                        <h4>Savings Goals</h4>
+
+                        <strong
+                            class="purple-text"
+                            id="exportSavingsGoals">
+                            0
+                        </strong>
+
+                        <p>Active goals</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REPORTS -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon teal">
+                        ▤
+                    </div>
+
+                    <div>
+
+                        <h4>Reports</h4>
+
+                        <strong
+                            class="teal-text"
+                            id="exportReports">
+                            0
+                        </strong>
+
+                        <p>Generated reports</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= EXPORT OPTIONS ================= -->
+
+            <section class="export-grid">
+
+
+                <!-- MODULES -->
+
+                <div class="export-card">
+
+                    <h3>1. Choose Modules</h3>
+
+                    <p class="card-description">
+                        Select the data you want to export.
+                    </p>
+
+
+                    <label class="check-row">
+
+                        <input
+                            type="checkbox"
+                            class="module-checkbox"
+                            value="Dashboard"
+                            checked>
+
+                        <span class="check-box">✓</span>
+
+                        <span>
+                            <b>Dashboard</b>
+                            <small>
+                                Overview summary and charts
+                            </small>
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-row">
+
+                        <input
+                            type="checkbox"
+                            class="module-checkbox"
+                            value="Transactions"
+                            checked>
+
+                        <span class="check-box">✓</span>
+
+                        <span>
+                            <b>Transactions</b>
+                            <small>
+                                All income and expense records
+                            </small>
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-row">
+
+                        <input
+                            type="checkbox"
+                            class="module-checkbox"
+                            value="Budgets"
+                            checked>
+
+                        <span class="check-box">✓</span>
+
+                        <span>
+                            <b>Budgets</b>
+                            <small>
+                                Categories, budgets & limits
+                            </small>
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-row">
+
+                        <input
+                            type="checkbox"
+                            class="module-checkbox"
+                            value="Reports"
+                            checked>
+
+                        <span class="check-box">✓</span>
+
+                        <span>
+                            <b>Reports</b>
+                            <small>
+                                Analytics and insights data
+                            </small>
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-row">
+
+                        <input
+                            type="checkbox"
+                            class="module-checkbox"
+                            value="Savings Goals"
+                            checked>
+
+                        <span class="check-box">✓</span>
+
+                        <span>
+                            <b>Savings Goals</b>
+                            <small>
+                                Goals, progress and contributions
+                            </small>
+                        </span>
+
+                    </label>
+
+
+                    <button
+                        class="select-all"
+                        id="selectAllBtn">
+
+                        □ &nbsp; Unselect All
+
+                    </button>
+
+                </div>
+
+
+                <!-- DATE RANGE -->
+
+                <div class="export-card">
+
+                    <h3>2. Select Date Range</h3>
+
+                    <p class="card-description">
+                        Choose the time period for your data.
+                    </p>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="dateRange"
+                            value="This Month"
+                            checked>
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>This Month</b>
+
+                            <small>
+                                Current month
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="dateRange"
+                            value="Last Month">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>Last Month</b>
+
+                            <small>
+                                Previous month
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="dateRange"
+                            value="Last 3 Months">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>Last 3 Months</b>
+
+                            <small>
+                                Previous three months
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="dateRange"
+                            value="This Year">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>This Year</b>
+
+                            <small>
+                                Current year
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="dateRange"
+                            value="Custom Range">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>Custom Range</b>
+
+                            <small>
+                                Select custom dates
+                            </small>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- FORMAT -->
+
+                <div class="export-card">
+
+                    <h3>3. Select Format</h3>
+
+                    <p class="card-description">
+                        Choose your preferred file format.
+                    </p>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="format"
+                            value="XLSX"
+                            checked>
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>
+                                Excel (XLSX)
+                                <em>Recommended</em>
+                            </b>
+
+                            <small>
+                                Best for analysis and spreadsheets
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="format"
+                            value="CSV">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>CSV</b>
+
+                            <small>
+                                Best for data portability
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="format"
+                            value="PDF">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>PDF</b>
+
+                            <small>
+                                Best for reports and printing
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="format"
+                            value="JSON">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>JSON</b>
+
+                            <small>
+                                Best for developers
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="radio-row">
+
+                        <input
+                            type="radio"
+                            name="format"
+                            value="XML">
+
+                        <span class="radio-circle"></span>
+
+                        <span>
+
+                            <b>XML</b>
+
+                            <small>
+                                Universal data format
+                            </small>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- EXPORT SUMMARY -->
+
+                <div class="export-card summary-box">
+
+                    <h3>4. Export Summary</h3>
+
+                    <p class="card-description">
+                        Here's what will be included in your export.
+                    </p>
+
+
+                    <div class="included-list">
+
+
+                        <div class="included-item">
+
+                            <span class="included-icon blue">
+                                ▤
+                            </span>
+
+                            <span>
+
+                                <b>Dashboard Data</b>
+
+                                <small>
+                                    Summary, KPIs and charts
+                                </small>
+
+                            </span>
+
+                            <strong>✓</strong>
+
+                        </div>
+
+
+                        <div class="included-item">
+
+                            <span class="included-icon green">
+                                ↗
+                            </span>
+
+                            <span>
+
+                                <b>Transactions Data</b>
+
+                                <small id="exportTransactionSummary">
+                                    0 total records
+                                </small>
+
+                            </span>
+
+                            <strong>✓</strong>
+
+                        </div>
+
+
+                        <div class="included-item">
+
+                            <span class="included-icon orange">
+                                ▣
+                            </span>
+
+                            <span>
+
+                                <b>Budgets Data</b>
+
+                                <small id="exportBudgetSummary">
+                                    0 budgets
+                                </small>
+
+                            </span>
+
+                            <strong>✓</strong>
+
+                        </div>
+
+
+                        <div class="included-item">
+
+                            <span class="included-icon purple">
+                                ▤
+                            </span>
+
+                            <span>
+
+                                <b>Reports Data</b>
+
+                                <small>
+                                    Reports and insights
+                                </small>
+
+                            </span>
+
+                            <strong>✓</strong>
+
+                        </div>
+
+
+                        <div class="included-item">
+
+                            <span class="included-icon teal">
+                                ◎
+                            </span>
+
+                            <span>
+
+                                <b>Savings Goals Data</b>
+
+                                <small id="exportSavingsSummary">
+                                    0 goals and contributions
+                                </small>
+
+                            </span>
+
+                            <strong>✓</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="file-size">
+
+                        Estimated file size:
+
+                        <strong>
+                            Based on current data
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RECENT EXPORTS ================= -->
+
+            <section class="recent-exports">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h3>Recent Exports</h3>
+
+                        <p>
+                            Your recently exported files
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>File Name</th>
+                                <th>Modules Included</th>
+                                <th>Date Range</th>
+                                <th>Format</th>
+                                <th>File Size</th>
+                                <th>Exported On</th>
+                                <th>Status</th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="exportTable">
+
+                            <!-- Existing exports can remain here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <button
+                    class="view-all"
+                    id="viewAllBtn">
+
+                    View all exports →
+
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- IMPORTANT:
+     app.js MUST load BEFORE export.js
+-->
+
+<script src="app.js"></script>
+<script src="export.js"></script>
+
+</body>
+</html>

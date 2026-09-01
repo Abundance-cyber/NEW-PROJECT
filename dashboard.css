@@ -1,0 +1,699 @@
+/* =========================================================
+   NAIRAPULSE DASHBOARD
+   BOLD DARK DESIGN
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050d18;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background: #050d18;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-left: 5px;
+}
+
+.brand .logo {
+    width: 40px;
+    height: 40px;
+}
+
+.brand h1 {
+    font-size: 30px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 14px;
+    width: 100%;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    background: #071321;
+    border: 1px solid #1b3045;
+    border-radius: 8px;
+    min-height: 810px;
+    padding: 24px 10px;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.user-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #08a94f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.welcome h3 {
+    font-size: 19px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.welcome p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #aeb9c8;
+}
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 46px;
+    padding: 0 14px;
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.menu-item:hover {
+    background: #0c2a24;
+}
+
+.menu-item.active {
+    background: #0ca84f;
+    color: #ffffff;
+}
+
+.menu-icon {
+    width: 28px;
+    min-width: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content {
+    min-width: 0;
+    width: 100%;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.page-header h2 {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #aeb9c8;
+}
+
+.date-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #071321;
+    color: #ffffff;
+    border: 1px solid #1b3045;
+    border-radius: 8px;
+    padding: 13px 17px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.calendar-icon {
+    font-size: 18px;
+}
+
+.arrow {
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+/* =========================================================
+   SUMMARY CARDS
+   ========================================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.card {
+    min-width: 0;
+    min-height: 118px;
+    background: #071321;
+    border: 1px solid #1b3045;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.card-icon.green {
+    background: #08a94f;
+}
+
+.card-icon.blue {
+    background: #1769e8;
+}
+
+.card-icon.red {
+    background: #ef3340;
+}
+
+.card-content {
+    min-width: 0;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.card-value {
+    font-size: 26px;
+    font-weight: 900;
+    white-space: nowrap;
+    letter-spacing: -0.5px;
+    overflow: hidden;
+}
+
+.card-value.white {
+    color: #ffffff;
+}
+
+.card-value.blue {
+    color: #1769e8;
+}
+
+.card-value.red {
+    color: #ff3344;
+}
+
+.card-value.green {
+    color: #00c95a;
+}
+
+.card-subtitle {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #cbd3dd;
+}
+
+.info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #00c95a;
+    color: #071321;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+/* =========================================================
+   CHART LAYOUT
+   ========================================================= */
+
+.chart-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px;
+}
+
+.chart-card {
+    min-width: 0;
+    min-height: 590px;
+    background: #071321;
+    border: 1px solid #1b3045;
+    border-radius: 8px;
+    padding: 22px;
+}
+
+.chart-card h2 {
+    font-size: 21px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* =========================================================
+   PIE CHART
+   ========================================================= */
+
+.pie-section {
+    min-height: 490px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.donut-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-chart {
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    background:
+        conic-gradient(
+            #ff334f 0% 25%,
+            #1769e8 25% 45%,
+            #ffb800 45% 70%,
+            #20a7a7 70% 85%,
+            #6539df 85% 100%
+        );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.donut-chart::before {
+    content: "";
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background: #071321;
+}
+
+.donut-center {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.donut-center strong {
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.donut-center span {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* =========================================================
+   PIE LEGEND
+   ========================================================= */
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 160px;
+}
+
+.legend-item {
+    display: grid;
+    grid-template-columns: 16px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.legend-name {
+    color: #ffffff;
+}
+
+.legend-percent {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.food {
+    background: #ff334f;
+}
+
+.rent {
+    background: #1769e8;
+}
+
+.utilities {
+    background: #ffb800;
+}
+
+.transportation {
+    background: #20a7a7;
+}
+
+.shopping {
+    background: #6539df;
+}
+
+/* =========================================================
+   BAR CHART HEADER
+   ========================================================= */
+
+.chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.chart-header h2 {
+    margin-bottom: 0;
+}
+
+.chart-legend {
+    display: flex;
+    gap: 18px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.chart-legend span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.income-dot,
+.expense-dot {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.income-dot {
+    background: #1769e8;
+}
+
+.expense-dot {
+    background: #ff334f;
+}
+
+/* =========================================================
+   BAR CHART
+   ========================================================= */
+
+.bar-chart {
+    height: 490px;
+    display: flex;
+    position: relative;
+}
+
+.y-axis {
+    width: 45px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.chart-area {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-left: 1px solid #294054;
+    border-bottom: 1px solid #294054;
+    padding: 0 15px 42px;
+}
+
+/* GRID LINES */
+
+.grid-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #203347;
+    pointer-events: none;
+}
+
+.line-1 {
+    top: 0;
+}
+
+.line-2 {
+    top: 25%;
+}
+
+.line-3 {
+    top: 50%;
+}
+
+.line-4 {
+    top: 75%;
+}
+
+.line-5 {
+    bottom: 30px;
+}
+
+/* =========================================================
+   MONTHS
+   ========================================================= */
+
+.month {
+    height: 100%;
+    min-width: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+}
+
+.bars {
+    height: calc(100% - 30px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 7px;
+}
+
+.bar {
+    width: 18px;
+    border-radius: 3px 3px 0 0;
+    min-height: 3px;
+}
+
+.bar.income {
+    background: #1769e8;
+}
+
+.bar.expense {
+    background: #ff334f;
+}
+
+.month > span {
+    position: absolute;
+    bottom: 0;
+    font-size: 13px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1150px) {
+    .main-layout {
+        grid-template-columns: 190px minmax(0, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .chart-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .dashboard {
+        padding: 12px;
+    }
+
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        min-height: auto;
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .pie-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .brand h1 {
+        font-size: 25px;
+    }
+
+    .page-header h2 {
+        font-size: 25px;
+    }
+
+    .chart-card {
+        padding: 15px;
+    }
+
+    .donut-chart {
+        width: 230px;
+        height: 230px;
+    }
+
+    .donut-chart::before {
+        width: 125px;
+        height: 125px;
+    }
+
+    .chart-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .bar {
+        width: 12px;
+    }
+
+    .month {
+        min-width: 40px;
+    }
+}
